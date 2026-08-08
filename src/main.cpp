@@ -1,18 +1,15 @@
 #include <iostream>
 
-int multiply(int x, int y) { return x * y; }
+int addThree(int number) { return number + 3; }
 
-int readNumber() {
-  int number{};
-  std::cout << "Enter an integer: ";
-  std::cin >> number;
-  return number;
-}
+int doubleNumber(int number) { return number * 2; }
 
 int main() {
-  int firstNumber{readNumber()};
-  int secondNumber{readNumber()};
-  int answer{multiply(firstNumber, secondNumber)};
-  std::cout << "Answer: " << answer << '\n';
+  int value{10};
+  value = addThree(value);
+  value = doubleNumber(value);
+
+  std::cout << "Final value: " << value << '\n';
+
   return 0;
 }
