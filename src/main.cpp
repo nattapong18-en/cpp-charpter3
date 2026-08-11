@@ -1,15 +1,15 @@
 #include <iostream>
 
-int addThree(int number) { return number + 3; }
-
-int doubleNumber(int number) { return number * 2; }
+int calculateArea(int width, int height) {
+  std::cerr << "calculateArea() called\n";
+  return width * height;
+}
 
 int main() {
-  int value{10};
-  value = addThree(value);
-  value = doubleNumber(value);
+  std::cerr << "main() called\n";
 
-  std::cout << "Final value: " << value << '\n';
+  int area{calculateArea(4, 3)};
+  std::cout << "Area: " << area << '\n';
 
   return 0;
 }
