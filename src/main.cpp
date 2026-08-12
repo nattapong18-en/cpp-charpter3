@@ -1,14 +1,23 @@
 #include <iostream>
 
 int calculateArea(int width, int height) {
-  std::cerr << "calculateArea() called\n";
+  std::cerr << "calculateArea(width=" << width << ", height=" << height
+            << ")\n";
+
   return width * height;
 }
 
 int main() {
-  std::cerr << "main() called\n";
+  std::cout << "Width: ";
+  int width{};
+  std::cin >> width;
 
-  int area{calculateArea(4, 3)};
+  std::cout << "Height: ";
+  int height{};
+  std::cin >> height;
+  std::cerr << "main::width" << width << '\n';
+  std::cerr << "main::height" << height << '\n';
+  int area{calculateArea(width, height)};
   std::cout << "Area: " << area << '\n';
 
   return 0;
