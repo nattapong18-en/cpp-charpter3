@@ -1,24 +1,26 @@
 #include <iostream>
+// #define ENABLE_DEBUG
 
 int calculateArea(int width, int height) {
-  std::cerr << "calculateArea(width=" << width << ", height=" << height
+#ifdef ENABLE_DEBUG
+  std::cerr << "calculateArea(width =" << width << " height =" << height
             << ")\n";
-
+#endif
   return width * height;
 }
 
 int main() {
-  std::cout << "Width: ";
+#ifdef ENABLE_DEBUG
+  std::cerr << "main() called\n";
+#endif
   int width{};
+  std::cout << "Width: ";
   std::cin >> width;
-
-  std::cout << "Height: ";
   int height{};
+  std::cout << "Height: ";
   std::cin >> height;
-  std::cerr << "main::width" << width << '\n';
-  std::cerr << "main::height" << height << '\n';
-  int area{calculateArea(width, height)};
-  std::cout << "Area: " << area << '\n';
+
+  std::cout << "Area: " << calculateArea(width, height) << '\n';
 
   return 0;
 }
